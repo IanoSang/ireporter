@@ -60,14 +60,14 @@ export class InterventionsComponent implements OnInit {
   }
   onDetailsChanged(event: any) {
     this.title = event.target.value;
-    
+
   }
   onInfoChanged(event: any) {
     this.info = event.target.value;
   }
   onLocationChanged(event: any) {
     this.location = event.target.value;
-  
+
   }
 
 
@@ -80,7 +80,7 @@ export class InterventionsComponent implements OnInit {
     uploadData.append('info', this.info);
     uploadData.append('location', this.location);
     uploadData.append('image', this.image, this.image.name);
-    this.http.post('http://127.0.0.1:8000/api/interventions/', uploadData).subscribe(
+    this.http.post('https://ireportermoringa.herokuapp.com/api/interventions/', uploadData).subscribe(
       data => console.log(data),
       error => console.log(error)
     );

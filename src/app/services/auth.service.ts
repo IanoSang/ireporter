@@ -15,13 +15,13 @@ const options = {
   providedIn: 'root'
 })
 export class AuthService {
-  base_url = "http://127.0.0.1:8000"
+  base_url = "https://ireportermoringa.herokuapp.com"
   constructor(private http:HttpClient) { }
   registerUser(userData:any): Observable<any>{
-    return this.http.post('http://127.0.0.1:8000/api/client', userData);
+    return this.http.post('https://ireportermoringa.herokuapp.com/api/client', userData);
   }
   registerAdmin(userData:any): Observable<any>{
-    return this.http.post('http://127.0.0.1:8000/api/admin', userData);
+    return this.http.post('https://ireportermoringa.herokuapp.com/api/admin', userData);
   }
   private setSession(access_token:string) {
     const payload = jwtDecode <JWTPayload>(access_token);
